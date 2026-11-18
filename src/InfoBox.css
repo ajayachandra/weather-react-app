@@ -1,0 +1,184 @@
+
+.InfoBox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.weather-card {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 20px !important;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07) !important;
+}
+
+/* Weather image */
+.weather-banner {
+    height: 230px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Dark overlay on image */
+.weather-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(15, 23, 42, 0.75),
+        rgba(15, 23, 42, 0.1)
+    );
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    color: white;
+}
+
+.weather-banner-overlay p {
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.weather-banner-overlay h2 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.weather-banner-overlay span {
+    font-size: 16px;
+    text-transform: capitalize;
+}
+
+/* Card content */
+.weather-card-content {
+    padding: 30px !important;
+}
+
+/* Temperature */
+.weather-temperature {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.weather-temperature h1 {
+    font-size: 48px;
+    color: #2563eb;
+    font-weight: 700;
+}
+
+.main-weather-icon {
+    font-size: 45px !important;
+    color: #f59e0b;
+}
+
+/* Details grid */
+.weather-details {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.weather-detail {
+    background-color: #f1f5f9;
+    padding: 18px 8px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.weather-detail span {
+    display: block;
+    color: #64748b;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.weather-detail h3 {
+    color: #1e293b;
+    font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+
+    .weather-banner {
+        height: 190px;
+    }
+
+    .weather-banner-overlay h2 {
+        font-size: 26px;
+    }
+
+    .weather-card-content {
+        padding: 20px !important;
+    }
+
+    .weather-details {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .weather-temperature h1 {
+        font-size: 38px;
+    }
+}
+
+
+/* Weather card hover effect */
+.weather-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.weather-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.10) !important;
+}
+
+/* Weather detail hover */
+.weather-detail {
+    transition: all 0.3s ease;
+}
+
+.weather-detail:hover {
+    background-color: #e0edff;
+    transform: translateY(-3px);
+}
+
+/* Mobile card adjustments */
+@media (max-width: 480px) {
+    .weather-banner {
+        height: 170px;
+    }
+
+    .weather-banner-overlay {
+        padding: 20px;
+    }
+
+    .weather-details {
+        gap: 10px;
+    }
+
+    .weather-detail {
+        padding: 15px 5px;
+    }
+
+    .weather-detail h3 {
+        font-size: 14px;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .weather-card,
+    .weather-detail,
+    .search-section {
+        transition: none !important;
+        animation: none !important;
+    }
+}

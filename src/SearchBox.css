@@ -1,0 +1,94 @@
+
+.SearchBox {
+    width: 100%;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* City input */
+.city-input {
+    flex: 1;
+    min-width: 200px;
+    max-width: 400px;
+}
+
+/* Search button */
+.search-button {
+    height: 56px;
+    min-width: 110px !important;
+    border-radius: 10px !important;
+    font-weight: 600 !important;
+}
+
+/* Location button */
+.location-button {
+    height: 56px;
+    border-radius: 10px !important;
+    font-weight: 600 !important;
+}
+
+/* Error message */
+.error-message {
+    width: 100%;
+    color: #dc2626;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+/* Mobile responsive design */
+@media (max-width: 600px) {
+    .search-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .city-input {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .search-button,
+    .location-button {
+        width: 100%;
+    }
+}
+
+
+/* Button hover effects */
+.search-button {
+    transition: all 0.3s ease !important;
+}
+
+.search-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(37, 99, 235, 0.25);
+}
+
+.location-button {
+    transition: all 0.3s ease !important;
+}
+
+.location-button:hover {
+    transform: translateY(-2px);
+    background-color: #eff6ff !important;
+}
+
+/* Input focus */
+.city-input .MuiOutlinedInput-root.Mui-focused {
+    background-color: #f8fafc;
+}
+
+/* Avoid animation when user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .search-button,
+    .location-button {
+        transition: none !important;
+    }
+}
